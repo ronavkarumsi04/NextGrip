@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080c10">
+  <meta name="description" content="NextGrip Control Lab — explore how accessible voice commands could operate a wrist-mounted assistive gripper. Interactive browser simulation.">
+  <title>NextGrip — Control Lab</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script type="module" src="assets/app.js"></script>
+</head>
+<body>
+  <a href="#controls" class="skip">Skip to controls</a>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="NextGrip Control Lab home">
+        <span class="brand-symbol" aria-hidden="true"><span></span><span></span></span>
+        <span>next<span class="brand-light">grip</span><span class="brand-dot">.</span></span>
+      </a>
+      <div class="nav-end">
+        <a href="#how-it-works" class="nav-link">The concept</a>
+        <a href="https://github.com/ronavkarumsi04/NextGrip" rel="noopener noreferrer" class="nav-link" target="_blank">Source code <span aria-hidden="true">↗</span></a>
+        <span class="live-indicator"><span class="pulse-dot"></span> SIMULATION ONLINE</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro-meta"><span class="eyebrow">NEXTGRIP / PROTOTYPE 01</span><span class="intro-rule"></span><span class="eyebrow dim">ASSISTIVE ROBOTICS RESEARCH</span></div>
+        <h1 id="page-title">More control.<br><span>More independence.</span></h1>
+        <p>Explore a voice-operated gripper concept that turns simple instructions into controlled, bounded movement. No hardware required — try the interactive simulator below.</p>
+      </section>
+
+      <section class="workspace" aria-label="Gripper control simulator">
+        <div class="sim-panel">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">01 / MECHANISM</span>
+              <h2>Live gripper model</h2>
+            </div>
+            <span class="panel-chip">DIGITAL TWIN <span aria-hidden="true">↗</span></span>
+          </div>
+          <div class="stage" id="stage">
+            <div class="stage-cross stage-cross-tl" aria-hidden="true"></div>
+            <div class="stage-cross stage-cross-tr" aria-hidden="true"></div>
+            <div class="stage-cross stage-cross-bl" aria-hidden="true"></div>
+            <div class="stage-cross stage-cross-br" aria-hidden="true"></div>
+            <div class="stage-tag">TOP VIEW / MOTION SIMULATION</div>
+            <svg viewBox="0 0 640 410" class="device-art" role="img" aria-label="Illustration of an opposing-jaw robotic gripper. Jaws animate as the grip percentage changes.">
+              <defs>
+                <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#263640"/>
+                  <stop offset="45%" stop-color="#19252d"/>
+                  <stop offset="100%" stop-color="#0f171d"/>
+                </linearGradient>
+                <linearGradient id="tips" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8fcaf"/><stop offset="1" stop-color="#789c62"/></linearGradient>
+                <filter id="glow"><feGaussianBlur stdDeviation="14"/></filter>
+              </defs>
+              <ellipse cx="320" cy="207" rx="142" ry="80" fill="#91c27e" opacity=".06" filter="url(#glow)"/>
+              <path d="M102 205 H538" stroke="#31404b" stroke-width="2" stroke-dasharray="4 8"/>
+              <path d="M320 48 V358" stroke="#29363f" stroke-dasharray="4 8"/>
+              <rect x="167" y="138" width="306" height="139" rx="18" fill="#0b1117" stroke="#344552" stroke-width="2"/>
+              <rect x="183" y="154" width="274" height="107" rx="14" fill="url(#metal)" stroke="#455661"/>
+              <rect x="284" y="149" width="72" height="117" rx="11" fill="#0e161c" stroke="#536572"/>
+              <rect x="296" y="160" width="48" height="94" rx="6" fill="#1b2932" stroke="#2d424e"/>
+              <path d="M301 183 H339 M301 193 H339 M301 203 H339 M301 213 H339 M301 223 H339" stroke="#49606a" stroke-width="2"/>
+              <g id="jaw-left">
+                <path d="M174 160 L101 160 Q89 160 89 172 L89 242 Q89 254 101 254 L174 254 L174 224 L128 224 L128 190 L174 190Z" fill="#1c2933" stroke="#82959c" stroke-width="3"/>
+                <rect x="124" y="191" width="18" height="33" rx="5" fill="url(#tips)"/>
+                <path d="M100 176 L113 176 M100 236 L113 236" stroke="#52616b" stroke-width="2"/>
+              </g>
+              <g id="jaw-right">
+                <path d="M466 160 L539 160 Q551 160 551 172 L551 242 Q551 254 539 254 L466 254 L466 224 L512 224 L512 190 L466 190Z" fill="#1c2933" stroke="#82959c" stroke-width="3"/>
+                <rect x="498" y="191" width="18" height="33" rx="5" fill="url(#tips)"/>
+                <path d="M527 176 L540 176 M527 236 L540 236" stroke="#52616b" stroke-width="2"/>
+              </g>
+              <rect x="254" y="285" width="132" height="42" rx="8" fill="#111b23" stroke="#465964"/>
+              <rect x="285" y="295" width="70" height="22" rx="5" fill="#1e2e38" stroke="#3b525c"/>
+              <path d="M290 307 H350" stroke="#87b66b" stroke-width="2"/>
+              <text x="320" y="311" text-anchor="middle" fill="#e4f3d6" font-size="10" letter-spacing="1.3">NEXTGRIP</text>
+              <circle cx="202" cy="171" r="5" fill="#748892"/>
+              <circle cx="438" cy="171" r="5" fill="#748892"/>
+              <circle cx="202" cy="245" r="5" fill="#748892"/>
+              <circle cx="438" cy="245" r="5" fill="#748892"/>
+              <path d="M116 102 H212" stroke="#8db778" stroke-width="1.5" />
+              <circle cx="116" cy="102" r="3" fill="#a5d886"/>
+              <text x="223" y="106" fill="#abc9a0" font-size="12" font-family="monospace" letter-spacing="1">JAW TRAVEL</text>
+            </svg>
+            <div class="stage-footer"><span>MECHANICAL VISUALIZATION</span><span>NOT A PHYSICAL PROTOTYPE</span></div>
+            <div id="estop-overlay" class="estop-overlay" hidden><strong>EMERGENCY STOP</strong><span>Motion simulation paused</span></div>
+          </div>
+          <div class="telemetry">
+            <div class="telemetry-item"><span>GRIP POSITION</span><strong><span id="current-value">0</span><small>%</small></strong><div class="track"><div id="position-bar"></div></div></div>
+            <div class="telemetry-item"><span>COMMAND TARGET</span><strong><span id="target-value">0</span><small>%</small></strong><div class="track"><div id="target-bar" class="secondary-fill"></div></div></div>
+            <div class="telemetry-item"><span>EST. SERVO ANGLE</span><strong><span id="angle-value">20</span><small>°</small></strong><div class="track"><div id="angle-bar" class="tertiary-fill"></div></div></div>
+          </div>
+        </div>
+
+        <div class="controls-panel" id="controls">
+          <div class="panel-heading"><div><span class="eyebrow">02 / COMMAND SYSTEM</span><h2>Motion controls</h2></div><span class="panel-chip">LOCAL ONLY</span></div>
+          <div class="voice-card">
+            <div class="voice-label"><span class="voice-icon" aria-hidden="true">◉</span><span><strong>Voice command input</strong><small>Browser microphone · no account</small></span></div>
+            <button id="listen-button" class="button button-primary" type="button"><span aria-hidden="true" id="mic-dot">●</span><span id="listen-label">Start listening</span></button>
+            <p id="voice-support" class="support-copy">Checking microphone support…</p>
+          </div>
+          <form id="command-form" class="command-form">
+            <label for="command-input">OR TYPE A COMMAND</label>
+            <div class="command-row"><input id="command-input" name="command" autocomplete="off" spellcheck="false" placeholder="e.g. grip 45 percent" maxlength="120"><button type="submit" class="button button-arrow" aria-label="Run typed command">↗</button></div>
+          </form>
+          <div class="quick-label"><span>QUICK ACTIONS</span><span>CLICK TO RUN</span></div>
+          <div class="quick-actions">
+            <button data-command="open" type="button" class="quick-action"><span aria-hidden="true">↖</span> Open grip</button>
+            <button data-command="close" type="button" class="quick-action"><span aria-hidden="true">↘</span> Close grip</button>
+            <button data-command="grip harder" type="button" class="quick-action"><span aria-hidden="true">＋</span> Grip harder</button>
+            <button data-command="grip lighter" type="button" class="quick-action"><span aria-hidden="true">−</span> Grip lighter</button>
+            <button data-command="stop" type="button" class="quick-action"><span aria-hidden="true">Ⅱ</span> Hold position</button>
+          </div>
+          <label class="slider-label" for="target-slider"><span>MANUAL GRIP SETPOINT</span><strong><span id="slider-value">0</span>%</strong></label>
+          <input id="target-slider" type="range" min="0" max="100" step="5" value="0" aria-label="Manual target grip percentage">
+          <div class="slider-ticks"><span>OPEN / 0%</span><span>CLOSED / 100%</span></div>
+          <div class="critical-controls">
+            <button id="estop-button" class="button button-danger" type="button">■ &nbsp; EMERGENCY STOP</button>
+            <button id="reset-button" class="button button-outline" type="button">↺ Reset</button>
+          </div>
+          <div class="system-status" role="status" aria-live="polite"><span id="status-light" class="status-light"></span><span id="status-text">Ready. Simulation initialized in the open position.</span></div>
+        </div>
+      </section>
+
+      <section class="bottom-row" id="how-it-works">
+        <article class="info-panel">
+          <span class="eyebrow">03 / THE LOGIC</span>
+          <h2>Speech → intent → motion</h2>
+          <div class="steps">
+            <div><span class="step-number">01</span><div><strong>Understand the instruction</strong><p>Recognizes “open,” “close,” “grip harder,” “lighter,” “stop,” and numerical grip percentages.</p></div></div>
+            <div><span class="step-number">02</span><div><strong>Apply motion limits</strong><p>Validates the target from 0–100% and converts it to a simulated servo angle of 20–110°.</p></div></div>
+            <div><span class="step-number">03</span><div><strong>Move with a speed limit</strong><p>Gradually moves toward the goal. Emergency stop locks further commands until manually reset.</p></div></div>
+          </div>
+        </article>
+        <article class="history-panel">
+          <div class="history-heading"><div><span class="eyebrow">04 / EXECUTION TRACE</span><h2>Command history</h2></div><button type="button" id="clear-log" class="text-button">Clear log</button></div>
+          <ol id="command-log" class="command-log" aria-label="Recent command execution history">
+            <li><span class="log-time">SYSTEM</span><span class="log-message">Ready for input. All controls operate the simulator only.</span></li>
+          </ol>
+        </article>
+      </section>
+    </main>
+    <footer class="footer"><span>© 2026 NEXTGRIP / STUDENT ENGINEERING PROJECT</span><span>CONCEPT + SOFTWARE DEMONSTRATOR · NO MEDICAL OR HARDWARE CONTROL</span></footer>
+  </div>
+</body>
+</html>
